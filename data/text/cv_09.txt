@@ -1,0 +1,47 @@
+Mariem DRIDI
+Electronics and Automation Student
+dridimyriem@gmail.com — +216 96 558 196 — Tunis, Tunisia
+Profile
+Motivatedelectronicsandautomationstudentspecializinginembedded systems and industrial au-
+tomation. Passionate about microcontrollers, IoT, and real-time systems, with strong technical,
+teamwork, andleadershipskillsdevelopedthroughhands-onprojectsandactiveparticipationinstudent
+organizations.
+Technical Skills
+• Programming: C/C++, Java, Python, MATLAB/Simulink, Ladder Logic, LabVIEW, Assembly
+(ARM, AVR)
+• Microcontrollers & MCUs: Arduino, STM32, ESP32, Raspberry Pi, PIC
+• Wireless & IoT: MQTT, LoRa, Node-RED, Wi-Fi, Bluetooth
+• RTOS & Concepts: FreeRTOS (basics), Embedded Systems, Sensor Interfacing, Automation Con-
+trol, Real-Time Systems
+• Software & Tools: AutoCAD, Proteus, VScode, Arduino IDE, STM32CubeIDE, SCADA, TIA
+Portal (STEP 7)
+Academic Projects
+Smart Greenhouse Automation July 2025
+Automatic control of temperature, humidity, and watering in a greenhouse.
+Tools: STM32CubeIDE, Proteus, MATLAB
+Technologies: STM32, DHT11, Soil Moisture Sensor, Relay Modules
+Skills: Embedded control, IoT integration, sensor calibration, system design
+ESP32 IoT Weather Station June 2025
+IoT system to monitor and transmit weather data to a cloud dashboard.
+Tools: ESP32, Arduino IDE, Wokwi Simulator, MQTT
+Technologies: ESP32, DHT11/DHT22 Sensor, IoT Communication, Cloud Integration
+Skills: Embedded programming, cloud dashboard setup, sensor interfacing
+Arduino Smart Home Simulation May 2024
+Simulated smart home system for lighting, temperature, and motion automation.
+Tools: Arduino IDE, Wokwi Simulator
+Technologies: Arduino, Motion Sensor, Temperature Sensor, Light Sensor
+Skills: Embedded programming, automation logic, virtual hardware simulation
+Education
+University of Carthage – Faculty of Sciences of Bizerte 2023 – Present
+Bachelor’s Degree in Electronics — Specialization: Industrial Computing and Automation
+1
+Organizations
+Vice President – Cyber Processing Unit (Robotics Club) Sept 2024 – Oct 2025
+Faculty of Sciences of Bizerte
+Member – Enactus FSB Sept 2024 – Present
+Faculty of Sciences of Bizerte
+Languages
+• Arabic: Native
+• French: Intermediate
+• English: Fluent
+2

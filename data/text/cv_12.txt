@@ -1,0 +1,48 @@
+Farah GAIDA
+Computer Science Engineering Student — Software & Data Engineering
+farahgaida9@gmail.com — +216 50 191 594 — Beja, Tunisia — LinkedIn
+Summary
+Final-year Computer Science Engineering student specializing in Software and Data Engineering, with a strong
+focus on Computer Vision and deep learning. Experienced in video analysis, CNN-based models, and real-time
+detectionsystems. SeekingaPFEinternshipinAIandComputerVisiontodevelopintelligent,real-worldsolutions.
+Experience
+IDEA Lab FSB — Computer Vision Intern Jul–Aug 2025
+Developed a deep learning system for crowd abnormality detection using CNN-based models. Built a cross-
+platform desktop app using Svelte, Flask, and Electron.
+STEG IT Center — Full Stack Developer Intern Jul 2024
+Designed and implemented a task management web app using React.js and Express.js to improve workflow effi-
+ciency.
+Goodwill Consulting — Web Development Intern Feb–Jun 2023
+Developed an e-commerce platform for selling, donating, and exchanging children’s items using ASP.NET and
+Bootstrap.
+Icstartup — Web Development Intern Aug 2022
+Developed an invoice management platform (fatoura.tn) using React.js.
+STEG IT Center — Web Developer Intern Jul 2022
+Created a work management system for IT centers using HTML5, Tailwind CSS, and PHP.
+Education
+Faculty of Sciences of Bizerte 2023–Present
+Engineering Degree in Computer Science — Software & Data Engineering
+Higher Institute of Applied Languages and Computer Science, Beja 2020–2023
+National Bachelor’s Degree in Computer Science
+Technical Skills
+• Programming: Python, JavaScript, C#, PHP
+• AI/ML: TensorFlow, Keras, CNNs, EfficientNet, YOLO, OpenCV, Scikit-learn
+• Frontend: React.js, Angular, Bootstrap, Tailwind CSS
+• Backend: Node.js (Express), ASP.NET
+• Databases: MongoDB, MySQL
+• Tools: Git, Power BI, Firebase
+Academic and Personal Projects
+• YawningDetectionforDriverDrowsiness—Builtareal-timefatiguedetectionmodelusingEfficientNet.
+Python, TensorFlow/Keras, OpenCV
+• Insurance Accident Prediction — Built a machine learning model predicting accident risks.
+• IoT Bracelet for Alzheimer Patients (Hani m3ak) — Fall detection, heart rate monitoring, and GPS
+tracking with companion mobile app (Wynk).
+Android Studio, Java, Firebase, NodeMCU ESP8266
+• Smart Home Web Application — Device management system using Node.js, Express.js, and MongoDB.
+• Clinic Management System — ASP.NET-based clinic administration software.
+• Real Estate Platform — Built using Angular, Tailwind CSS, and Spring Boot.
+Soft Skills & Languages
+• Soft Skills: Teamwork, Communication, Analytical Thinking, Problem Solving, Fast Learning, Time Manage-
+ment
+• Languages: Arabic (Native), French (Fluent), English (Professional Working Proficiency)
+1

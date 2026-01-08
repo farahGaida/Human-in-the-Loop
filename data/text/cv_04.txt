@@ -1,0 +1,48 @@
+Aymen MATTOUSSI
+Software Engineering Student — IT Support & Systems Administration
+aymen.mattoussii@gmail.com — +216 53 889 355 — Soukra, Ariana, Tunisia
+Summary
+Software Engineering student specialized in Software and Information Systems. Experienced
+in IT support, systems administration (Windows Server, Linux), and network management
+(Cisco, security, monitoring). Autonomous and solution-oriented, with strong problem-solving,
+adaptability, and teamwork skills.
+Experience
+Ulysse Hyper Distribution (Carrefour) — IT Technician Sep 2023 – May 2025
+Al Marsa, Tunisia
+• Prepared and deployed IT equipment (hardware/software installation and configuration).
+• Integrated and migrated systems; managed licenses and inventories.
+• Performed backups, restorations, and applied security procedures.
+• Provided Level 1 & 2 technical support remotely and on-site.
+• Ensured reliability, autonomy, and adherence to security standards.
+Progress Engineering — Mobile Development Intern (Final Year Project) Feb – Jun 2023
+El Ghazala Tech Park, Tunisia
+• Designed and developed a mobile app for beekeeping management.
+• Implemented features for geolocation, hive tracking, and harvest monitoring.
+• Improved user interface and experience for better usability.
+Progress Engineering — Mobile Developer (Summer Internship) Aug 2022
+El Ghazala Tech Park, Tunisia
+• Developed a food delivery mobile application using Firebase and Ionic.
+• Integrated a real-time database for order tracking and user management.
+• Collaborated with a small team to ensure delivery of a functional prototype.
+Education
+TEK-UP University, Tunis 2023 – Present
+Engineering Degree in Software and Information Systems
+Higher Institute of Applied Languages and Computer Science (ISLAIB), B´eja 2020 – 2023
+National Bachelor’s Degree in Software Engineering and Information Systems
+1
+Technical Skills
+• Systems Administration: Windows Server, Active Directory, Linux
+• Networking: Cisco equipment, supervision, network security
+• ERP Tools: Meti V9, SAP
+• Support: Level 1 & 2 incidents, remote troubleshooting
+• IT Management: Inventory, migrations, backups, security compliance
+• Programming Basics: Python, JavaScript, PHP
+Soft Skills
+Autonomy, Rigor, Problem Solving, Teamwork, Communication, Adaptability, Sense of Responsibility
+Languages
+• Arabic: Native
+• French: Fluent
+• English: Intermediate
+Interests
+Technology watch, personal development, sports, reading, video games
+2
