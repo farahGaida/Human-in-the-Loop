@@ -1,6 +1,6 @@
 outs:
-- md5: 12da51ae9b116aa1f4d099b19c3c6a78.dir
-  size: 3539975
+- md5: 3b2f3c3efe277d65e3b0d7c409d6dcec.dir
+  size: 3626089
   nfiles: 20
   hash: md5
   path: raw_cvs
