@@ -8,7 +8,7 @@ function App() {
       <div className="h-screen flex flex-col">
         {/* BARRE DE NAVIGATION */}
         <nav className="bg-blue-900 text-white p-4 flex justify-between items-center shadow-lg">
-          <div className="font-black tracking-tighter text-xl">CV-MLOPS</div>
+          <div className="font-black tracking-tighter text-xl">Human in the Loop</div>
           <div className="space-x-6">
             <Link to="/" className="hover:text-blue-400 font-medium transition">Annotateur</Link>
             <Link to="/dashboard" className="hover:text-blue-400 font-medium transition">Dashboard</Link>

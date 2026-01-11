@@ -1,9 +1,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# SQLite database (le fichier sera créé automatiquement)
-DATABASE_URL = "sqlite:///./cv_extractions.db"
 
+import os
+
+# On récupère le chemin absolu du dossier où se trouve ce fichier (backend/app/)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# On remonte d'un niveau pour mettre le .db dans /backend
+DB_PATH = os.path.join(BASE_DIR, "..", "cv_extractions.db")
+
+DATABASE_URL = f"sqlite:///{DB_PATH}"
 # Engine
 engine = create_engine(
     DATABASE_URL,

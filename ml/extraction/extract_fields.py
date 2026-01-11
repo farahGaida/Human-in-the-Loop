@@ -21,9 +21,21 @@ def extract_email(text):
 
 
 def extract_phone(text):
-    match = re.search(r"(\+?\d{1,3}[-.\s]?)?(\d{1,4}[-.\s]?){3,6}\d", text)
-    return match.group(0).strip() if match else "À corriger"
-
+    # Ce regex cherche :
+    # 1. Un éventuel + suivi de l'indicatif pays
+    # 2. Des blocs de 2 à 4 chiffres séparés par des espaces, points ou tirets
+    # 3. Il s'assure qu'il y a entre 8 et 15 chiffres au total
+    phone_pattern = r"(?:(?:\+|00)[\s.-]?\d{1,3}[\s.-]?)?(?:\(?\d{2,4}\)?[\s.-]?){2,4}\d{2,4}"
+    
+    match = re.search(phone_pattern, text)
+    
+    if match:
+        phone = match.group(0).strip()
+        # Sécurité : si le résultat est trop court (ex: juste une année 2024), on rejette
+        if len(re.sub(r"\D", "", phone)) >= 8:
+            return phone
+            
+    return "À corriger"
 
 # ---------------- spaCy ----------------
 
@@ -34,9 +46,18 @@ def extract_name_spacy(text):
 
 
 def extract_orgs_spacy(text):
-    doc = nlp(text)
-    orgs = list(dict.fromkeys([ent.text for ent in doc.ents if ent.label_ == "ORG"]))
-    return " | ".join(orgs[:5])  # max 5 pour l'UI
+    # On se concentre sur le début du CV (les 2000 premiers caractères) 
+    # car l'employeur actuel est presque toujours en haut.
+    doc = nlp(text[:2000])
+    
+    # On récupère les organisations, mais on ignore les mots trop courts ou suspects
+    orgs = [ent.text for ent in doc.ents if ent.label_ == "ORG" and len(ent.text) > 3]
+    
+    # On ne renvoie que la TOUTE PREMIÈRE organisation trouvée
+    if orgs:
+        return orgs[0]
+    
+    return "À corriger"
 
 
 # ---------------- SECTIONS ----------------
