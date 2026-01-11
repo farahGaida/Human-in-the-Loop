@@ -15,8 +15,10 @@ export default function MetricsDashboard() {
     </div>
   );
 
+  // Calculate percentage of work done
   const progress = (metrics.corrected / metrics.total) * 100;
 
+  // Configuration for the stat cards
   const stats = [
     { label: "Dataset", value: metrics.total, sub: "CVs totaux", icon: <Database size={20}/>, color: "text-blue-600", bg: "bg-blue-50" },
     { label: "Validation", value: metrics.corrected, sub: `${Math.round(progress)}% complété`, icon: <CheckCircle size={20}/>, color: "text-green-600", bg: "bg-green-50" },

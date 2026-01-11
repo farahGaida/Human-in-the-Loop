@@ -2,26 +2,27 @@ import React, { useState, useEffect } from "react";
 import { cvService } from "../api";
 import CVViewer from "../components/CVViewer";
 import CorrectionForm from "../components/CorrectionForm";
-import { Clock } from "lucide-react"; // Optionnel : pour une icône sympa
+import { Clock } from "lucide-react"; 
 
 const Annotator = () => {
   const [cv, setCv] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
 
+  // Fetch the next CV that needs validation from the backend
   const loadData = async () => {
     try {
       const data = await cvService.getPending();
       if (data && data.length > 0) {
         setCv(data[0]);
         const now = Date.now();
-        setStartTime(now);
-        setElapsedTime(0); // Réinitialise le compteur visuel
+        setStartTime(now); // Start the timer for this CV
+        setElapsedTime(0); // Reset visual counter
       } else {
-        setCv(null);
+        setCv(null); // No more CVs to process
       }
     } catch (error) {
-      console.error("Erreur lors du chargement des données:", error);
+      console.error("Error loading data:", error);
     }
   };
 
@@ -29,7 +30,7 @@ const Annotator = () => {
     loadData();
   }, []);
 
-  // Gestion du chronomètre visuel
+  // Timer logic
   useEffect(() => {
     let interval;
     if (cv && startTime) {
@@ -41,8 +42,8 @@ const Annotator = () => {
     return () => clearInterval(interval);
   }, [cv, startTime]);
 
+  // Save the human corrections and the time spent back to the database
   const handleSave = async () => {
-    // Calcul final pour la base de données
     const duration = (Date.now() - startTime) / 1000;
 
     const correctionData = {
@@ -58,20 +59,21 @@ const Annotator = () => {
 
     try {
       await cvService.submitCorrection(cv.id, correctionData);
-      loadData(); 
+      loadData(); // Load the next CV automatically
     } catch (error) {
       console.error("Erreur lors de la sauvegarde:", error);
       alert("Erreur lors de la sauvegarde.");
     }
   };
 
-  // Formatage du temps (ex: 01:20)
+  // Convert seconds into MM:SS format
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Show finished state if no CVs are left
   if (!cv)
     return (
       <div className="flex items-center justify-center h-full bg-gray-50">
@@ -85,16 +87,16 @@ const Annotator = () => {
 
   return (
     <div className="flex h-full w-full overflow-hidden">
-      {/* GAUCHE : Visualisation PDF et Texte */}
+      {/* LEFT SIDE: Extracted Text Visualization */}
       <div className="w-1/2 h-full border-r border-gray-200 bg-white">
         <CVViewer text={cv.raw_text} cv_id={cv.cv_id} />
       </div>
 
-      {/* DROITE : Formulaire et Stats temps réel */}
+      {/* RIGHT SIDE: Correction Form and Real-time Timer */}
       <div className="w-1/2 h-full overflow-y-auto p-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           
-          {/* HEADER DU FORMULAIRE AVEC CHRONO */}
+          {/* Form Header with Timer UI */}
           <div className="flex justify-between items-end mb-4 px-2">
             <div>
               <h2 className="text-lg font-bold text-gray-700">Correction Manuelle</h2>

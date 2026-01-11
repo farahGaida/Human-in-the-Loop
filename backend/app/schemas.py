@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 
-# Schéma de base partagé
+# Shared base schema for common fields
 class CVExtractionBase(BaseModel):
     cv_id: str
     predicted_name: Optional[str]
@@ -14,7 +14,7 @@ class CVExtractionBase(BaseModel):
     status: str
     model_version: str
 
-# Schéma pour mettre à jour (ce que React envoie quand on corrige)
+# Schema for updates (sent by the React frontend during correction)
 class CVExtractionUpdate(BaseModel):
     corrected_name: str
     corrected_email: str
@@ -23,9 +23,9 @@ class CVExtractionUpdate(BaseModel):
     corrected_experience: str
     corrected_education: str
     correction_time_seconds: float
-    status: str = "corrected" # Passe automatiquement à corrected
+    status: str = "corrected" # Automatically sets status to 'corrected' on update
 
-# Schéma complet pour la lecture (ce que l'API renvoie)
+# Full schema for API responses (includes all database fields)
 class CVExtraction(CVExtractionBase):
     id: int
     raw_text: str
@@ -40,4 +40,4 @@ class CVExtraction(CVExtractionBase):
     updated_at: datetime
 
     class Config:
-        from_attributes = True # Permet de convertir SQLAlchemy vers Pydantic
+        from_attributes = True # Allows Pydantic to read SQLAlchemy models directly

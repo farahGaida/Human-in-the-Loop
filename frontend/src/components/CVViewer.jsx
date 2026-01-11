@@ -1,7 +1,7 @@
 import React from "react";
 import { FileText, ExternalLink } from "lucide-react";
 
-// On utilise cv_id ici pour correspondre à ton schéma de base de données
+// Component to display the extracted text and a link to the original PDF
 const CVViewer = ({ text, cv_id }) => {
   return (
     <div className="flex flex-col h-full w-full bg-white">
@@ -11,7 +11,7 @@ const CVViewer = ({ text, cv_id }) => {
           <span className="font-bold text-sm uppercase">Texte Extrait</span>
         </div>
 
-        {/* Vérification que cv_id existe avant d'afficher le lien */}
+        {/* Check if cv_id exists to create the link to the backend static folder */}
         {cv_id && (
           <a
             href={`http://localhost:8000/static/${cv_id}.pdf`}

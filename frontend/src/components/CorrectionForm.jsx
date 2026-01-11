@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckCircle, Building2, User, Mail, Phone, GraduationCap, Briefcase } from "lucide-react";
 
+// Component for the correction form side of the application
 const CorrectionForm = ({ cv, setCv, onSave }) => {
     return (
         <div className="space-y-5 p-5 bg-white rounded-xl shadow-md border border-gray-100">
@@ -14,7 +15,7 @@ const CorrectionForm = ({ cv, setCv, onSave }) => {
                 </span>
             </h3>
             
-            {/* Section : Informations Personnelles */}
+            {/* Section : Personal Information */}
             <div className="space-y-4">
                 <div>
                     <label className="flex items-center text-xs font-bold text-blue-700 uppercase mb-1">
@@ -51,7 +52,7 @@ const CorrectionForm = ({ cv, setCv, onSave }) => {
                 </div>
             </div>
 
-            {/* Section : Parcours Professionnel */}
+            {/* Section : Professional Background */}
             <div className="pt-2 space-y-4">
                 <div>
                     <label className="flex items-center text-xs font-bold text-blue-700 uppercase mb-1">

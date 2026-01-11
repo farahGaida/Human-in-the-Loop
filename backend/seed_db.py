@@ -1,15 +1,14 @@
 import sys
 from pathlib import Path
 
-# Ajout de la racine du projet au PATH
 root_path = Path(__file__).resolve().parent.parent
 sys.path.append(str(root_path))
 
-# Imports depuis le backend
+# Backend imports for database management
 from backend.app.database import SessionLocal, engine
 from backend.app.models import Base, CVExtraction
 
-# Imports depuis le module ML
+# ML imports for entity and section extraction
 from ml.extraction.extract_fields import (
     extract_name_spacy, 
     extract_email, 
@@ -19,27 +18,28 @@ from ml.extraction.extract_fields import (
 )
 
 def seed():
-    # Crée les tables si elles n'existent pas encore
-    print("🛠️ Vérification des tables...")
+    # Create database tables if they don't exist
+    print("🛠️ checking tables...")
     Base.metadata.create_all(bind=engine)
     
     db = SessionLocal()
-    # On ajuste le chemin vers data/text depuis la racine
+    # Define the path to the extracted text files
     text_folder = root_path / "data" / "text"
     
     if not text_folder.exists():
-        print(f"❌ Erreur : Le dossier {text_folder} est introuvable.")
+        print(f"❌ Error : folder {text_folder} not found")
         return
 
+    # List all .txt files in the folder
     cv_files = list(text_folder.glob("*.txt"))
-    print(f"📂 {len(cv_files)} fichiers trouvés dans {text_folder}")
+    print(f"📂 found {len(cv_files)} fiels in {text_folder}")
 
     for txt_file in cv_files:
         if db.query(CVExtraction).filter(CVExtraction.cv_id == txt_file.stem).first():
-            print(f"⏩ {txt_file.name} déjà présent, on passe.")
+            print(f"⏩ {txt_file.name} already exists, skipping")
             continue
             
-        print(f"🧠 Analyse de {txt_file.name} via SpaCy...")
+        print(f"🧠 Analyzing {txt_file.name} with SpaCy...")
         text = txt_file.read_text(encoding="utf-8", errors="ignore")
         
         new_cv = CVExtraction(
@@ -59,7 +59,7 @@ def seed():
     
     db.commit()
     db.close()
-    print("✅ Terminé ! Base de données prête pour le Frontend.")
+    print("✅ Done! Database is ready for the Frontend")
 
 if __name__ == "__main__":
     seed()

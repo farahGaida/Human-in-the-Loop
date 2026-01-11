@@ -1,8 +1,11 @@
 import pdfplumber
 from pathlib import Path
 
+# Define input and output dir
 input_dir = Path("data/raw_cvs")
 output_dir = Path("data/text")
+
+# Create the output folder if it doesn't exist
 output_dir.mkdir(exist_ok=True)
 
 for pdf_path in input_dir.glob("*.pdf"):

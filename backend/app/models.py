@@ -9,11 +9,12 @@ Base = declarative_base()
 class CVExtraction(Base):
     __tablename__ = "extractions"
 
+    # Primary key and unique identifiers
     id = Column(Integer, primary_key=True, index=True)
     cv_id = Column(String, unique=True, index=True)
     raw_text = Column(Text)
 
-    # --- Champs prédits par l'IA ---
+    # Fields predicted by the AI model
     predicted_name = Column(String)
     predicted_email = Column(String)
     predicted_phone = Column(String)
@@ -21,7 +22,7 @@ class CVExtraction(Base):
     predicted_experience = Column(Text)
     predicted_education = Column(Text)
 
-    # --- Champs corrigés par l'Humain ---
+    # Fields corrected by the Human
     corrected_name = Column(String, nullable=True)
     corrected_email = Column(String, nullable=True)
     corrected_phone = Column(String, nullable=True)
@@ -34,8 +35,10 @@ class CVExtraction(Base):
     status = Column(String, default="pending")  # pending / corrected / validated
     auto_accepted = Column(Integer, default=0)
 
+    # Track time spent by the user on correction
     correction_time_seconds = Column(Float, nullable=True)
 
+    # Timestamps for auditing
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(
         DateTime,

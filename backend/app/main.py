@@ -5,21 +5,21 @@ from app.database import engine
 from app.models import Base
 from fastapi.staticfiles import StaticFiles
 
-# Création des tables SQLite
+# create database tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Human-in-the-Loop CV Extraction",
-    description="Backend FastAPI pour correction humaine et suivi MLOps",
+    description="FastAPI backend for human correction and MLOps tracking",
     version="1.0.0"
 )
-# Cette ligne permet d'accéder aux fichiers via http://localhost:8000/static/nom_du_cv.pdf
+
 app.mount("/static", StaticFiles(directory="../data/raw_cvs"), name="static")
 
-# CORS (nécessaire pour React)
+# CORS 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # en prod → limiter
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,7 +32,7 @@ app.add_middleware(
 @app.get("/")
 def root():
     return {
-        "message": "Human-in-the-Loop API is running 🚀"
+        "message": "Human-in-the-Loop API is running "
         
     }
 app.include_router(extractions.router)
